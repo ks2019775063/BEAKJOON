@@ -1,0 +1,8 @@
+2557¹ø - Hello World
+
+#include<stdio.h>
+
+int main()
+{
+	printf("Hello World!");
+}

@@ -1,0 +1,8 @@
+7287¹ø - µî·Ï
+
+#include<stdio.h>
+
+int main()
+{
+	printf("3\nckrlqur");
+}
