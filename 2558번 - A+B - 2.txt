@@ -1,0 +1,10 @@
+2558¹ø - A+B - 2
+
+#include<stdio.h>
+
+int main()
+{
+	int a, b;
+	scanf("%d%d", &a, &b);
+	printf("%d",a+b);
+}
