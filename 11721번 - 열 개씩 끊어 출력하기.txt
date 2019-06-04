@@ -1,0 +1,25 @@
+11721번 - 열 개씩 끊어 출력하기
+
+#include<stdio.h>
+int main()
+{
+	char s[200];
+	int i, j, count=0;
+	gets(s);
+	i=0;
+	while(s[i]!='\0')
+	{
+		if(count<10)
+		{
+			printf("%c",s[i]);
+			count++;
+		}
+		else
+		{
+			printf("\n");
+			count=0;
+			continue;
+		}
+		i++;
+	}
+} 
