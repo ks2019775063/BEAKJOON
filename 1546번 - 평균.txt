@@ -1,0 +1,25 @@
+1546¹ø - Æò±Õ
+
+#include<stdio.h>
+
+float nsum, score[10005], m;
+
+int main()
+{
+	float n;
+	scanf("%f", &n);
+	for(int i=1;i<=n;i++)
+	{
+		scanf("%d", &score[i]);
+		if(m<score[i])
+		{
+			m=score[i];
+		}
+	}
+	for(int i=1;i<=n;i++)
+	{
+		score[i]=score[i]/m*100;
+		nsum+=score[i];
+	}
+	printf("%f",nsum/n);
+}
