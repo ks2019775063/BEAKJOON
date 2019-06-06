@@ -1,0 +1,21 @@
+2443¹ø - º° Âï±â - 6
+
+#include<stdio.h>
+
+int main()
+{
+	int i, j, n;
+	scanf("%d",&n);
+	for(i=n;i>=1;i--)
+	{
+		for(j=i;j<n;j++)
+		{
+			printf(" ");
+		}
+		for(j=i*2;j>=2;j--)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
