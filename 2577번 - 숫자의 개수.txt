@@ -1,0 +1,33 @@
+2577번 - 숫자의 개수
+
+
+#include<stdio.h>
+
+int num[5], i, j, m=0, count[15], n, sum, sum2;
+
+int main()
+{
+	scanf("%d%d%d", &num[1], &num[2], &num[3]);
+	sum=num[1]*num[2]*num[3];
+	sum2=sum;
+	n=1000000000;
+	for(j=1;j<=9;j++)
+	{
+		n/=10;
+		if(m != 0 && sum<n)
+		{
+			count[0]++;
+		}
+		if(sum<n)
+		{
+			continue;
+		}
+		m = sum/n;
+		sum %= n;
+		count[m]++;
+	}
+	for(i=0;i<=9;i++)
+	{
+		printf("%d\n", count[i]);
+	}
+}
