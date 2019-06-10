@@ -1,0 +1,42 @@
+4344번 - 평균은 넘겠지
+
+#include<stdio.h>
+
+float avg, avg2[1005];
+int score[1005];
+
+int main()
+{
+	int i, j, n, c, sum, count;
+	
+	scanf("%d",&c);
+	
+	for(i=1;i<=c;i++)
+	{
+	  sum=0;
+	  count=0;
+	  avg= .0;
+	  
+	  scanf("%d", &n);
+	  for(j=1;j<=n;j++)
+	  {
+	     scanf("%d", &score[j]);
+	     sum+=score[j];
+	  }
+	  avg=(float)sum/n;
+	  
+	  for(j=1;j<=n;j++)
+	  {
+	     if(score[j]>avg)
+	     {
+	        count++;
+	     }
+	  }
+	  
+	  avg2[i]=(float)count*100/n;
+	}
+	for(i=1;i<=c;i++)
+	{
+		printf("%.3f%\n", avg2[i]);
+	}
+} 
