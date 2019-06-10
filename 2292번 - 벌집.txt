@@ -1,0 +1,19 @@
+2292번 - 벌집
+
+#include<stdio.h>
+
+int main()
+{
+	int n, num=1, i, j, count=1;
+	scanf("%d", &n);
+	while(n>num)
+	{
+		i=num;
+		for(j=i;j<i+6*count;j++)//쌓이는 층을 단계라고 했을 때 한 단계의 마지막 수까지 반복 
+		{
+			num++;//현재 위치 
+		}
+		count++;//층이 쌓일 때마다 count를 1씩 증가
+	}
+	printf("%d", count);
+}
