@@ -1,0 +1,42 @@
+1193번 - 분수찾기
+
+#include<stdio.h>
+
+int main()
+{
+	int i, j=1, count = 0, num1 = 1, num2 = 1, n;
+	scanf("%d", &n);
+	while(count != n)
+	{
+		if(j%2!=0)
+		{
+			num2=1;
+			for(i=num1;i>=1;i--)
+			{
+				count++;
+				if(count==n)
+				{
+					break;
+				}
+				num2++;
+			}
+			j++;
+		}
+		else
+		{
+			num2=j;
+			for(i=1;i<=num1;i++)
+			{
+				count++;
+				if(count==n)
+				{
+					break;
+				}
+				num2--;
+			}
+			j++;
+		}
+		num1++;
+	}
+	printf("%d/%d", i, num2);
+}
