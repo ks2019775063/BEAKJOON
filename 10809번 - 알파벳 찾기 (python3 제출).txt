@@ -1,0 +1,17 @@
+10809번 - 알파벳 찾기
+
+a=[]
+a=input()
+b=[]
+length=int(len(a))
+for i in range(0,123):
+    b.append(-1)
+
+for i in range(0, length):
+    for j in range(97, 123):
+        if(ord(a[i])==j and b[j]==-1):
+            b[j]=i
+            break
+
+for i in range(97,123):
+    print(b[i])
