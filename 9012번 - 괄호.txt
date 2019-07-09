@@ -1,0 +1,54 @@
+9012¹ø - °ýÈ£
+
+#include<stdio.h>
+#include<string.h>
+
+int YN[100000];
+
+int main()
+{
+	char str[60];
+	int n, i, j, len, count;
+	scanf("%d", &n);
+	for(i=1;i<=n;i++)
+	{
+		scanf("%s", str);
+		count=0;
+		len = strlen(str);
+		for(j=0;j<=len;j++)
+		{
+			if(str[j]=='(')
+			{
+				count++;
+			}
+			else if(str[j]==')')
+			{
+				count--;
+			}
+			else
+			{
+				continue;
+			}
+			if(count<0)
+			{
+				YN[i]=1;
+				break;
+			}
+		}
+		if(count!=0)
+		{
+			YN[i]=1;
+		}
+	}
+	for(i=1;i<=n;i++)
+	{
+		if(YN[i]==1)
+		{
+			printf("NO\n");
+		}
+		else
+		{
+			printf("YES\n");
+		}
+	}
+}
