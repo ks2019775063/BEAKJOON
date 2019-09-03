@@ -1,0 +1,71 @@
+1959번 - 달팽이3
+
+#include <stdio.h>
+
+int main()
+{
+	int M, N;
+	int m, n;
+	int i=1, j=0, k;
+	long long int count=0;
+		
+	scanf("%d%d", &M, &N);
+	m=M;
+	n=N;
+	
+	if(M>N && M>2 && N>2)
+	{
+		i += (N/2)-1;
+		j += (N/2)-1;
+		m -= ((N/2)-1)*2;
+		n -= ((N/2)-1)*2; 
+		count += (long long int)((N/2)-1)*4;
+	}
+	else if(M<N && M>2 && N>2)
+	{
+		i += (M/2)-1;
+		j += (M/2)-1;
+		m -= ((M/2)-1)*2;
+		n -= ((M/2)-1)*2; 
+		count += (long long int)((M/2)-1)*4;
+	}
+	else if(M==N && M>2 && N>2)
+	{
+		i += (M/2)-1;
+		j += (N/2)-1;
+		m -= ((M/2)-1)*2;
+		n -= ((N/2)-1)*2; 
+		count += (long long int)((M/2)-1)*4; 
+	}
+	
+	for(k=0, m--;;count++)
+	{
+		if(k==0) //오른쪽 
+		{
+			j += n;
+			n--;
+			k++;
+		}
+		else if(k==1) //아래 
+		{
+			i += m;
+			m--;
+			k++;
+		}
+		else if(k==2) //왼쪽 
+		{
+			j -= n;
+			n--;
+			k++;
+		}
+		else // 위(k==3) 
+		{
+			i -= m;
+			m--;
+			k=0;
+		}
+		if((m==0 && k%2==1) || (n==0 && k%2==0)) break;
+	}
+	
+	printf("%lld\n%d %d", count, i, j);
+}

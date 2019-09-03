@@ -1,0 +1,44 @@
+1952¹ø - ´ÞÆØÀÌ2
+
+#include<stdio.h>
+
+int z[103][103]={};
+
+int main()
+{
+	int p=1, maxm, maxn, m, n, i, j, x=-1, y=0, swi=1, count=0;
+	scanf("%d%d", &n, &m);
+	maxn = n;
+	maxm = m;
+	while(1)
+	{
+		for(i=0; i<maxm; i++)
+		{
+			x = x+swi;
+			z[y][x] = p++;
+		}	
+		if(p>n*m)
+		{
+			break;
+		}
+		count++;
+		
+		maxm--;
+		maxn--;
+		
+		for(i=0; i<maxn; i++)
+		{
+			y = y+swi;
+			z[y][x] = p++;
+		}
+		if(p>n*m)
+		{
+			break;
+		}
+		count++;
+		
+		swi = swi*(-1);
+	}
+	
+	printf("%d\n", count);
+}

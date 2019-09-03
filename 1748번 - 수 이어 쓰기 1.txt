@@ -1,0 +1,30 @@
+1748번 - 수 이어 쓰기 1
+
+#include<stdio.h>
+
+int main()
+{
+	int jarisu[100]; 
+	int i, j, n;
+	int sum = 0;
+	jarisu[0]=1;
+	scanf("%d", &n);
+	for(i=1;i<=10;i++)
+	{
+		jarisu[i] = jarisu[i-1] * 10;
+		for(j=jarisu[i-1];j<=jarisu[i]-1;j++)
+		{
+			if(j>n)
+			{
+				break;
+			}
+			//printf("%d\n",j);
+			sum += i;
+		}
+		if(j>n)
+		{
+			break;
+		}
+	}
+	printf("%d", sum);
+}

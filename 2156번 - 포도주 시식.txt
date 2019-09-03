@@ -1,0 +1,46 @@
+2156번 - 포도주 시식
+
+#include<stdio.h>
+
+int sum[10005], ml[10005];
+
+int main()
+{
+	int i, n, a, b, c;
+	scanf("%d", &n);
+	for(i=1;i<=n;i++)
+	{
+		scanf("%d", &ml[i]);
+	}
+	sum[1] = ml[1];
+	sum[2] = ml[1] + ml[2];
+	for(i=3;i<=n;i++)
+	{
+		a = sum[i-2] + ml[i];
+		b = sum[i-1];
+		c = sum[i-3] + ml[i-1] + ml[i];
+		if(a<b)
+		{
+			if(b<c)
+			{
+				sum[i]=c;
+			}
+			else
+			{
+				sum[i]=b;
+			}
+		}
+		else
+		{
+			if(a<c)
+			{
+				sum[i]=c;
+			}
+			else
+			{
+				sum[i]=a;
+			}
+		}
+	}
+	printf("%d", sum[n]);
+}
