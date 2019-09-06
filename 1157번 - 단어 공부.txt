@@ -1,0 +1,43 @@
+1157번 - 단어 공부
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char str[1000005], character;
+	int i, n, len, num[300]={}, max=0, count=0;
+	scanf("%s", &str);
+	len = strlen(str);
+	for(i=0;i<len;i++)
+	{
+		if(str[i] > 95)
+		{
+			str[i] = str[i]-32;
+		}
+		num[str[i]]++;
+		//printf("%c", str[i]);
+	}
+	for(i=65; i<=90; i++)
+	{
+		if(max == num[i])
+		{
+			count++;
+		}
+		if(num[i] > max)
+		{
+			max=num[i];
+			count=0;
+			character=i;
+		}
+		//printf("%d %d\n", i, num[i]);
+	}
+	if(count > 0)
+	{
+		printf("?");
+	}
+	else
+	{
+		printf("%c", character);
+	}
+}
