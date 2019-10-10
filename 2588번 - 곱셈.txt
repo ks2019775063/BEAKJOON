@@ -1,0 +1,16 @@
+2588¹ø - °ö¼À
+
+#include<stdio.h>
+
+int main()
+{
+	long long int a, b, n100, n10, n1, result;
+	scanf("%lld%lld", &a, &b);
+	result = a*b;
+	n100 = (b/100)*a;
+	b %= 100;
+	n10 = (b/10)*a;
+	b %= 10;
+	n1 = b*a;
+	printf("%lld\n%lld\n%lld\n%lld", n1, n10, n100, result);
+}
