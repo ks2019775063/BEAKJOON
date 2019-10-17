@@ -1,0 +1,21 @@
+3052번 - 나머지
+
+#include<stdio.h>
+
+int main()
+{
+	int i, a;
+	int result=0, num[45]={};
+	
+	for(i=1;i<=10;i++)
+	{
+		scanf("%d", &a);
+		num[a%42]++;
+	}
+	for(i=0;i<42;i++)
+	{
+		if(num[i]>0) result++;		
+	}
+	
+	printf("%d", result);
+}
